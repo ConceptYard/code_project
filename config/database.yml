@@ -19,8 +19,8 @@ development:
   database: code_project_development
   pool:     5
   username: bob
-  password: f0r3v3r
-  template: template0
+  password: <%= ENV['DB_USERNAME'] %>
+  template: <%= ENV['DB_PASSWORD'] %>
 
   # Connect on a TCP socket. Omitted by default since the client uses a
   # domain socket that doesn't need configuration. Windows does not have
@@ -46,16 +46,6 @@ test:
   encoding: unicode
   database: code_project_test
   pool:     5
-  username: bob
-  password: f0r3v3r
-  template: template0
-
-production:
-  adapter:  postgresql
-  host:     localhost
-  encoding: unicode
-  database: code_project_production
-  pool:     5
-  username: bob
-  password: f0r3v3r
+  username: <%= ENV['DB_USERNAME'] %>
+  password: <%= ENV['DB_PASSWORD'] %>
   template: template0
