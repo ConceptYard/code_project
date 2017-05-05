@@ -60,6 +60,7 @@ group :test do
   gem 'database_cleaner'
   gem 'launchy'
   gem 'selenium-webdriver'
+  gem 'shoulda-matchers'
 end
 
 # Use Unicorn for production server

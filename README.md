@@ -24,10 +24,16 @@ This application requires:
 - Ruby 2.4.1
 - Rails 4.2.8
 
-Learn more about [Installing Rails](http://railsapps.github.io/installing-rails.html).
-
 Getting Started
 ---------------
+
+I use RVM to manage my rubies and gemsets. Both a .ruby-version and .ruby-gemset are provided for use with RVM. Make sure you have bundler installed:
+
+```
+$ gem install bundler
+```
+
+### Database setup
 
 Documentation and Support
 -------------------------
