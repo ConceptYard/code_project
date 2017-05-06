@@ -12,8 +12,8 @@ describe User do
 
   describe "#full_name" do
 
-    it "should return generic term if no name values set" do
-      expect(@user.full_name).to match 'No Name'
+    it "should return email if no name values set" do
+      expect(@user.full_name).to match 'user@example.com'
     end
 
     it "should return the concatenation of first_name and last_name" do

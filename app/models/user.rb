@@ -8,7 +8,7 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   def full_name
-    return "No Name" if self.first_name.blank? && self.last_name.blank?
+    return self.email if self.first_name.blank? && self.last_name.blank?
     "#{self.first_name} #{self.last_name}"
   end
 

@@ -1,0 +1,11 @@
+%h2
+  = link_to post.title, post_path(post)
+%p.lead
+  by #{link_to post.author.full_name, user_path(post.author)}
+%p
+  %span.glyphicon.glyphicon-time
+  = post.posted_at
+%hr/
+%p
+  = post.body
+= link_to ('Read More <span class="glyphicon glyphicon-chevron-right"></span>').html_safe, post_path(post), :class => "btn btn-primary"

@@ -61,6 +61,7 @@ group :test do
   gem 'launchy'
   gem 'selenium-webdriver'
   gem 'shoulda-matchers'
+  gem 'timecop'
 end
 
 # Use Unicorn for production server

@@ -1,25 +1,31 @@
-%h1 Listing posts
-
-%table
-  %thead
-    %tr
-      %th Title
-      %th Body
-      %th Author
-      %th
-      %th
-      %th
-
-  %tbody
-    - @posts.each do |post|
-      %tr
-        %td= post.title
-        %td= post.body
-        %td= post.author_id
-        %td= link_to 'Show', post
-        %td= link_to 'Edit', edit_post_path(post)
-        %td= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' }
-
-%br
-
-= link_to 'New Post', new_post_path
+.container
+  .row
+    .col-md-8
+      %h1.page-header
+        Current Posts
+        %small Code Project
+        %small.pull-right
+          - if user_signed_in?
+            = link_to '+', new_post_path
+          - else
+            #{link_to('Sign in', new_user_session_path)} to post
+      - if @posts.empty?
+        %h2 No posts yet.
+      - @posts.each do |post|
+        = render 'posts/post', post: post
+    .col-md-4
+      .well
+        %h4 Post Search
+        .input-group
+          %input.form-control{:type => "text"}/
+          %span.input-group-btn
+            %button.btn.btn-default{:type => "button"}
+              %span.glyphicon.glyphicon-search
+      .well
+        %h4 Code Project
+        %p Example system to show Ruby on Rails programming capabilities.
+  %hr/
+  %footer
+    .row
+      .col-lg-12
+        %p Copyright © Concept Yard #{Time.now.year}

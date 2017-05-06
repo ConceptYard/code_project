@@ -1,5 +1,15 @@
-%h1 New post
-
-= render 'form'
-
-= link_to 'Back', posts_path
+.container
+  .row
+    .col-md-8
+      %h1.page-header New post
+  .row
+    .col-md-8
+      = form_for(@post, method: :post, html: { :role => 'form'}) do |f|
+        .form-group
+          = f.label :title
+          = f.text_field :title, :autofocus => true, class: 'form-control'
+        .form-group
+          = f.label :body
+          = f.text_area :body, class: 'form-control', rows: "3"
+        = link_to 'Cancel', posts_path, class: 'btn btn-default'
+        = f.submit 'Create', class: 'btn btn-primary right'

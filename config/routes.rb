@@ -4,10 +4,10 @@ Rails.application.routes.draw do
     resources :comments
   end
 
-  resources :posts, concerns: :commentable
+  resources :posts, concern: :commentable
 
   root to: 'posts#index'
-  
+
   devise_for :users
   resources :users
 end
