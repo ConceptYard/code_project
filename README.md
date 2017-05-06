@@ -84,7 +84,17 @@ $ foreman bundle exec bin/rake db:seed
 
 ### Running RSpec tests
 
-To locally run the test suite, run:
+To locally run the test suite, execute:
+
+```
+$ rspec
+or
+$ foreman bundle exec bin/rake spec
+```
+
+### Running the application
+
+To locally run the app, execute:
 
 ```
 $ rspec
