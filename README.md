@@ -47,6 +47,25 @@ I use RVM to manage my rubies and gemsets. Both a .ruby-version and .ruby-gemset
 $ gem install bundler
 ```
 
+### Foreman and environment variables
+
+The Foreman gem is used to set environment variables used to configure the application. Create a .env file in the root directory of the project that defines these environment variables:
+
+```
+ADMIN_FIRST_NAME=<CHANGE>
+ADMIN_LAST_NAME=<CHANGE>
+ADMIN_EMAIL=<CHANGE>
+ADMIN_PASSWORD=<CHANGE>
+
+DB_USERNAME=<CHANGE>
+DB_PASSWORD=<CHANGE>
+
+GMAIL_DOMAIN=<CHANGE>
+GMAIL_USERNAME=<CHANGE>
+GMAIL_PASSWORD=<CHANGE>
+```
+
+
 ### Database setup
 
 Documentation and Support
