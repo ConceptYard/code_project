@@ -10,6 +10,6 @@ class Post < ActiveRecord::Base
   has_many    :comments,  -> { order('created_at ASC') }
 
   def posted_at
-    "Posted on #{self.created_at.strftime("%B %d, %Y at %-l:%M %p")}"
+    "Posted on #{self.created_at.strftime('%B %d, %Y at %-l:%M %p')}"
   end
 end

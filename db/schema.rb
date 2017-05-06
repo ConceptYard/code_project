@@ -17,10 +17,9 @@ ActiveRecord::Schema.define(version: 20170505151900) do
   enable_extension "plpgsql"
 
   create_table "comments", force: :cascade do |t|
-    t.text     "body"
+    t.text     "body",       null: false
     t.integer  "author_id",  null: false
     t.integer  "post_id",    null: false
-    t.integer  "parent_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -29,11 +28,12 @@ ActiveRecord::Schema.define(version: 20170505151900) do
   add_index "comments", ["post_id"], name: "index_comments_on_post_id", using: :btree
 
   create_table "posts", force: :cascade do |t|
-    t.string   "title",      null: false
-    t.text     "body",       null: false
-    t.integer  "author_id",  null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.string   "title",                      null: false
+    t.text     "body",                       null: false
+    t.integer  "author_id",                  null: false
+    t.integer  "comments_count", default: 0
+    t.datetime "created_at",                 null: false
+    t.datetime "updated_at",                 null: false
   end
 
   add_index "posts", ["author_id"], name: "index_posts_on_author_id", using: :btree
