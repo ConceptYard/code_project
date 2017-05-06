@@ -47,9 +47,15 @@ I use RVM to manage my rubies and gemsets. Both a .ruby-version and .ruby-gemset
 $ gem install bundler
 ```
 
+Locally, run bundle install to load all necessary gems:
+
+```
+$ bundle install
+```
+
 ### Foreman and environment variables
 
-The Foreman gem is used to set environment variables used to configure the application. Create a .env file in the root directory of the project that defines these environment variables:
+The Foreman gem is used to set environment variables that configure the application. Create a .env file in the root directory of the project that defines these environment variables:
 
 ```
 ADMIN_FIRST_NAME=<CHANGE>
@@ -65,8 +71,26 @@ GMAIL_USERNAME=<CHANGE>
 GMAIL_PASSWORD=<CHANGE>
 ```
 
-
 ### Database setup
+
+The project was developed using the Postgres database system. To locally setup your database and populate with an admin user, execute:
+
+```
+$ foreman bundle exec bin/rake db:drop
+$ foreman bundle exec bin/rake db:create
+$ foreman bundle exec bin/rake db:migrate
+$ foreman bundle exec bin/rake db:seed
+```
+
+### Running RSpec tests
+
+To locally run the test suite, run:
+
+```
+$ rspec
+or
+$ foreman bundle exec bin/rake spec
+```
 
 Documentation and Support
 -------------------------
