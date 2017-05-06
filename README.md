@@ -91,21 +91,3 @@ $ rspec
 or
 $ foreman bundle exec bin/rake spec
 ```
-
-Documentation and Support
--------------------------
-
-Issues
--------------
-
-Similar Projects
-----------------
-
-Contributing
-------------
-
-Credits
--------
-
-License
--------
