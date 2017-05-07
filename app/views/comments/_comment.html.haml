@@ -1,7 +1,7 @@
 .media
-  = link_to comment.author.full_name, comment.author, class: 'pull-left'
   .media-body
-    %h4.media-heading
-      = comment.post.title
-      %small August 25, 2014 at 9:30 PM
     = comment.body
+    %div
+      = link_to comment.author.full_name, comment.author, class: 'pull-left'
+      &nbsp
+      %small #{comment.commented_at}

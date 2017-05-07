@@ -3,5 +3,5 @@
     .col-lg-8
       = render 'posts/post', post: @post, show_comments: true
     = render 'shared/right_sidebar'
-  .row
+  %footer
     = link_to 'Back', posts_path, class: 'btn btn-default'
