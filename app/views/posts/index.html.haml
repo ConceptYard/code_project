@@ -16,6 +16,8 @@
         = render 'posts/post', post: post
         - unless post == @posts.last
           %hr
+      %div
+        = paginate @posts
     .col-md-4
       .well
         %h4 Post Search
