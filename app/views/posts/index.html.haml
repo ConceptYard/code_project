@@ -18,17 +18,7 @@
           %hr
       %div
         = paginate @posts
-    .col-md-4
-      .well
-        %h4 Post Search
-        .input-group
-          %input.form-control{:type => "text", placeholder: 'Not yet implemented...'}/
-          %span.input-group-btn
-            %button.btn.btn-default{:type => "button"}
-              %span.glyphicon.glyphicon-search
-      .well
-        %h4 Code Project
-        %p Example system to show Ruby on Rails programming capabilities.
+    = render 'shared/right_sidebar'
 
 = login_modal_form({user: @user})
 = add_post_modal_form({post: @post})

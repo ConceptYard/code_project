@@ -4,7 +4,7 @@ Rails.application.routes.draw do
     resources :comments
   end
 
-  resources :posts, concern: :commentable
+  resources :posts, concerns: :commentable
 
   root to: 'posts#index'
 

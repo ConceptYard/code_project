@@ -9,7 +9,9 @@
 %p
   = post.body
 - if show_comments
-  = render 'comments/comment_form', comment: Comment.new
+  .well
+    %h4 Leave a Comment:
+    = render 'comments/form', comment: Comment.new, post: post
   - post.comments.each do |comment|
     = render 'comments/comment', comment: comment
 - else
