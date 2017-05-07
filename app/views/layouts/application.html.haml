@@ -1,3 +1,5 @@
+- @user ||= User.new
+- @post ||= Post.new
 !!!
 %html
   %head
@@ -13,5 +15,7 @@
     %main{:role => "main"}
       = render 'layouts/messages'
       = yield
+      = login_modal_form({user: @user})
+      = add_post_modal_form({post: @post})
     %footer
       = render 'layouts/footer'
