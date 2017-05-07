@@ -1,0 +1,11 @@
+- props ||= {}
+- form_data = props[:form_data] || {}
+.modal.fadeInDown{id: props[:id], role: 'dialog', tabindex: "-1", "aria-hidden" => "true"}
+  .modal-dialog
+    .modal-content
+      .modal-header
+        = button_tag class: 'close', data: {dismiss: 'modal'}, "aria-label" => 'Close' do
+          %span{'aria-hidden' => true} &times;
+        %h3.modal-title.m-t-none.m-b #{props[:title]}
+      .modal-body
+        = render props[:form], form_data: form_data

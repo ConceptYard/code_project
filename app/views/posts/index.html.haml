@@ -4,11 +4,12 @@
       %h1.page-header
         Current Posts
         %small Code Project
-        %small.pull-right
+        .pull-right
           - if user_signed_in?
-            = link_to '+', new_post_path
+            = link_to '+', '#', data: {target: '#modal-add-post-form', toggle: 'modal'}
           - else
-            #{link_to('Sign in', new_user_session_path)} to post
+            #{link_to('Sign in', '#', data: {target: '#modal-login-form', toggle: 'modal'})} to post
+      %hr
       - if @posts.empty?
         %h2 No posts yet.
       - @posts.each do |post|
@@ -19,11 +20,13 @@
       .well
         %h4 Post Search
         .input-group
-          %input.form-control{:type => "text"}/
+          %input.form-control{:type => "text", placeholder: 'Not yet implemented...'}/
           %span.input-group-btn
             %button.btn.btn-default{:type => "button"}
               %span.glyphicon.glyphicon-search
       .well
         %h4 Code Project
         %p Example system to show Ruby on Rails programming capabilities.
-  %hr/
+
+= login_modal_form({user: @user})
+= add_post_modal_form({post: @post})
