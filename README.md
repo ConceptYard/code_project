@@ -35,7 +35,7 @@ Ruby on Rails
 
 This application requires:
 
-- Ruby 2.4.1
+- Ruby 2.3.4 or Ruby 2.4.1
 - Rails 4.2.8
 
 Getting Started

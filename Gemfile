@@ -1,8 +1,5 @@
 source 'https://rubygems.org'
 
-# Ruby version
-ruby '2.4.1'
-
 # Rails Version locked to last 4.2.x
 gem 'rails', '4.2.8'
 
