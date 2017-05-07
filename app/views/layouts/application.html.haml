@@ -13,5 +13,6 @@
     %main{:role => "main"}
       = render 'layouts/messages'
       = yield
+      = render 'devise/sessions/login' unless user_signed_in?
     %footer
       = render 'layouts/footer'

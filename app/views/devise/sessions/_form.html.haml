@@ -1,0 +1,15 @@
+- user ||= User.new
+= form_for(user, :url => session_path(user), :html => { :role => 'form'}) do |f|
+  .form-group
+    = link_to 'Sign up', new_registration_path(user), class: 'right'
+    = f.label :email
+    = f.email_field :email, :autofocus => true, class: 'form-control'
+  .form-group
+    = link_to "Forgot password?", new_password_path(user), class: 'right'
+    = f.label :password
+    = f.password_field :password, class: 'form-control'
+  = f.submit 'Sign in', :class => 'button right'
+  .checkbox{:style => "width:150px"}
+    %label
+      = f.check_box :remember_me
+      Remember me

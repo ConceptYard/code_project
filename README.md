@@ -94,10 +94,8 @@ $ foreman bundle exec bin/rake spec
 
 ### Running the application
 
-To locally run the app, execute:
+To locally run the app, which will be accessible at http://localhost:3000, execute:
 
 ```
-$ rspec
-or
-$ foreman bundle exec bin/rake spec
+$ foreman bundle exec bin/rails s
 ```

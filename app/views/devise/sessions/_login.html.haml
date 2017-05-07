@@ -1,0 +1,9 @@
+#modal-login-form.modal.fadeInDown{role: 'dialog', tabindex: "-1", "aria-hidden" => "true"}
+  .modal-dialog
+    .modal-content
+      .modal-header
+        = button_tag class: 'close', data: {dismiss: 'modal'}, "aria-label" => 'Close' do
+          %span{'aria-hidden' => true} &times;
+        %h3.modal-title.m-t-none.m-b Sign in
+      .modal-body
+        = render 'devise/sessions/form', user: @new_user
