@@ -25,6 +25,9 @@ gem 'pundit'
 # pagination
 gem 'kaminari'
 
+# heroku support
+gem 'rails_12factor'
+
 group :development do
   gem 'web-console', '~> 2.0'
   gem 'spring'
