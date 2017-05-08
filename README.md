@@ -99,3 +99,9 @@ To locally run the app, which will be accessible at http://localhost:3000, execu
 ```
 $ foreman bundle exec bin/rails s
 ```
+
+### Accessing the application on heroku
+
+To access the running app at Heroku, navigate in a browser to:
+
+https://gentle-oasis-12612.herokuapp.com
