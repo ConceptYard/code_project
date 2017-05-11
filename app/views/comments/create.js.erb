@@ -1,1 +1,1 @@
-$("<%= escape_javascript(render('comments/comment', comment: @comment)) %>").appendTo("#post-comments");
+$("#post-<%= @comment.post.id %>").html("<%= escape_javascript(render('posts/post', post: @comment.post, show_comments: true)) %>");

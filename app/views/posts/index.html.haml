@@ -13,7 +13,8 @@
       - if @posts.empty?
         %h2 No posts yet.
       - @posts.each do |post|
-        = render 'posts/post', post: post
+        .post{id: "post-#{post.id}"}
+          = render 'posts/post', post: post
         - unless post == @posts.last
           %hr
       %div

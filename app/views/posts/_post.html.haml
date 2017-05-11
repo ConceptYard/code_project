@@ -1,25 +1,26 @@
 - show_comments ||= false
-.post{id: post.id}
-  %h2
-    = link_to post.title, post_path(post)
-  %p.lead
-    by #{link_to post.author.full_name, user_path(post.author)}
-  %p
-    %span.glyphicon.glyphicon-time
-    = post.posted_at
-    &nbsp
-    %span.glyphicon.glyphicon-comment
-    #{post.comments_count} Comments
-  %p
-    = post.body
-  %hr
-  - if show_comments
-    -if user_signed_in?
-      .well
-        %h4 Leave a Comment:
-        = render 'comments/form', comment: Comment.new, post: post
-    #post-comments
-      - post.comments.each do |comment|
-        = render 'comments/comment', comment: comment
-  - else
-    = link_to ('Read More <span class="glyphicon glyphicon-chevron-right"></span>').html_safe, post_path(post), :class => "btn btn-primary"
+%h2
+  = link_to post.title, post_path(post)
+%p.lead
+  by #{link_to post.author.full_name, user_path(post.author)}
+%p
+  %span.glyphicon.glyphicon-time
+  = post.posted_at
+  &nbsp
+  %span.glyphicon.glyphicon-comment
+  %span#comments-count
+    #{post.comments_count}
+  = " Comments"
+%p
+  = post.body
+%hr
+- if show_comments
+  -if user_signed_in?
+    .well
+      %h4 Leave a Comment:
+      = render 'comments/form', comment: Comment.new, post: post
+  #post-comments
+    - post.comments.each do |comment|
+      = render 'comments/comment', comment: comment
+- else
+  = link_to ('Read More <span class="glyphicon glyphicon-chevron-right"></span>').html_safe, post_path(post), :class => "btn btn-primary"
